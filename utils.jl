@@ -1,6 +1,3 @@
-using FranklinTheorems
-Franklin.include_external_config(FranklinTheorems.config_path()) 
-
 function hfun_bar(vname)
   val = Meta.parse(vname[1])
   return round(sqrt(val), digits=2)
