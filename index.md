@@ -9,9 +9,9 @@
 ## Education
 
 @@flist
-* 2021.9 ~ now, Universität Zürich
-* 2019.2 ~ 2019.6, University of Western Australia (exchange student)
-* 2017.9 ~ 2021.6, 中国矿业大学 (China University of Mining and Technology) 
+* 2021.9 ~ now, Universität Zürich, Banking and Finance & Quantitative Finance
+* 2019.2 ~ 2019.6, University of Western Australia (exchange student), Statistics and Finance
+* 2017.9 ~ 2021.6, 中国矿业大学, 金融学
 @@
 
 ## Contents
@@ -19,10 +19,12 @@
 _click on the '&check;' sign to jump to the page_
 
 @@flist
-* \goto{/Optim/}Introduction to Mathematical Optimization,
-* \goto{/Optim/linesearch/}Line Search Descent Methods,
-* \goto{/Bayes/}Bayesian Rule,
-* \goto{/Bayes/MCMC/}Markov Chain Monte Carlo Methods.
+* \goto{/Optim/}Mathematical Optimization,
+  * \goto{/Optim/}Introduction to Newton-Raphson Method,
+  * \goto{/Optim/linesearch/}Line Search Descent Methods,
+* \goto{/Bayes/}Bayesian Analysis,
+  * \goto{/Bayes/}Bayes' Rule,
+  * \goto{/Bayes/MCMC/}Markov Chain Monte Carlo Methods.
 @@
 
 

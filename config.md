@@ -1,5 +1,5 @@
 @def prepath = "Zurich_Log"
-@def author = "Langyan"
+@def author = "Langyan Zang"
 @def title = "苏黎世学习日志"
 @def hasmath = true              <!-- mostly there's maths on pages -->
 @def hascode = true
@@ -19,7 +19,7 @@ Useful HTML snippets
 
 \newcommand{\blurb}[1]{
     ~~~
-    <span style="font-size:24px;font-weight:300;">!#1</span>
+    <span style="font-size:18px;font-weight:300;">!#1</span>
     ~~~
 }
 \newcommand{\refblank}[2]{
@@ -31,10 +31,10 @@ Useful HTML snippets
 \newcommand{\skipline}{\lineskip}
 \newcommand{\note}[1]{@@note @@title ⚠ Note@@ @@content #1 @@ @@}
 \newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
-\newcommand{\theorem}[2]{@@theorem @@title Theorem: #1@@ @@content #2 @@ @@}
-\newcommand{\proof}[2]{@@proof @@title Proof: #1@@ @@content #2 @@ @@}
+\newcommand{\theorem}[2]{@@theorem @@title 🐣 Theorem: #1@@ @@content #2 @@ @@}
+\newcommand{\proof}[2]{@@proof @@title 🤯 Proof: #1@@ @@content #2 @@ @@}
 \newcommand{\intuition}[1]{@@intuition @@title ䷀ Intuition@@ @@content #1 @@ @@}
-\newcommand{\algo}[2]{@@algorithm @@title #1 Algorithm:@@ @@content #2 @@ @@}
+\newcommand{\algo}[2]{@@algorithm @@title 🐉 #1 Algorithm:@@ @@content #2 @@ @@}
 
 \newcommand{\esc}[2]{
     ```julia:esc__!#1
