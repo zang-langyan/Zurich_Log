@@ -1,0 +1,210 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/Zurich_Log/libs/katex/katex.min.css"> <link rel=stylesheet  href="/Zurich_Log/libs/highlight/github.min.css"> <link rel=stylesheet  href="/Zurich_Log/css/jtd.css"> <link rel=icon  href="/Zurich_Log/assets/infra/logoF_square.gif"> <title>苏黎世学习日志</title> <script src="/Zurich_Log/libs/lunr/lunr.min.js"></script> <script src="/Zurich_Log/libs/lunr/lunr_index.js"></script> <script src="/Zurich_Log/libs/lunr/lunrclient.min.js"></script> <div class=page-wrap > <div class=side-bar > <div class=header > <a href="/Zurich_Log/" class=title  style="color: rgb(255, 165, 127); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 苏黎世学习日志 <!-- <img style="height:60px;" src="/Zurich_Log/assets/infra/franklin.svg" alt=franklin  /> <style> @media (max-width: 31.25rem){ .side-bar .show-menu {height:30px;} } @media (max-width: 50rem) { .side-bar .header .title {padding-top:0; padding-bottom: 0;} .header .title img {height:60px; max-width: 100px !important;} } @media (min-width: 66.5rem){ .header .title img {max-width: 140px !important;} } </style> --> </a> </div> <label for=show-menu  class=show-menu >MENU</label> <input type=checkbox  id=show-menu  role=button > <div class=menu  id=side-menu > <ul class=menu-list > <li class="menu-list-item "><a href="/Zurich_Log/" class=menu-list-link >• Home</a> <li class="menu-list-parent "><a href="/Zurich_Log/Optim/" class=menu-list-link >• Mathematical Optimization</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/Zurich_Log/Optim/" class=menu-list-link >Introduction to Mathematical Optimization</a> <li class="menu-list-item "><a href="/Zurich_Log/Optim/linesearch/" class=menu-list-link >Line Search Descent Methods</a> </ul> <li class="menu-list-parent "><a href="/Zurich_Log/Bayes/" class=menu-list-link >• Bayesian Analysis</a> <ul class="menu-list-child-list "> <li class="menu-list-item "><a href="/Zurich_Log/Bayes/" class=menu-list-link >Bayes' Rule</a> <li class="menu-list-item "><a href="/Zurich_Log/Bayes/MCMC/" class=menu-list-link >Markov Chain Monte Carlo</a> </ul> <li class="menu-list-parent "><a href="/Zurich_Log/Deeplearning/" class=menu-list-link >• Deep Learning</a> <!-- <ul class="menu-list-child-list "> <li class="menu-list-item {{ispage styling/templates}}active{{end}}"><a href="/Zurich_Log/styling/templates/" class=menu-list-link >Templates</a> <li class="menu-list-item {{ispage styling/classes}}active{{end}}"><a href="/Zurich_Log/styling/classes/" class=menu-list-link >Classes</a> </ul> --> </ul> <!-- <form id=lunrSearchForm  name=lunrSearchForm > <input class=search-input  name=q  placeholder="Enter search term" type=text > <input type=submit  value=Search  formaction="/Zurich_Log/search/index.html"> </form> --> </div> <!-- <div class=footer > <a href="/Zurich_Log/faq/why-o-why/"><img style="width:40%;padding-left:10px;margin-bottom:15px;" src="/Zurich_Log/assets/infra/logoF2.svg" alt="Franklin Logo" /></a> </div> --> </div> <div class=main-content-wrap > <div class=main-content  id=focus  tabindex=-1  style="outline:0;"> <div class=main-header > <a name=pagetop ></a> <span style="width:30px; text-align: center;color:lightgray;">|</span> <a id=github  href="https://github.com/7lang2yan">GitHub Repository</a> </div> <div class=franklin-content ><h1 id=c_basic ><a href="#c_basic" class=header-anchor >C&#43;&#43; basic</a></h1> <div class=franklin-toc ><ol><li><a href="#literals_and_types">Literals and Types</a><li><a href="#declarations_and_definitions">Declarations and Definitions</a><li><a href="#typedefs_and_using_statements">Typedefs and using statements</a><li><a href="#storage_classes">Storage classes</a><ol><li><a href="#static_variable_in_a_function_2">static variable in a function &#40;2.&#41;</a><li><a href="#static_in_a_class_3">static in a class &#40;3.&#41;</a></ol><li><a href="#const_member_functions"><code>const</code> member functions</a><li><a href="#constexpr"><code>constexpr</code></a><li><a href="#alias_and_typedef">Alias and typedef</a><li><a href="#decltype"><code>decltype</code></a></ol></div> <h2 id=literals_and_types ><a href="#literals_and_types" class=header-anchor >Literals and Types</a></h2> <table><tr><th align=right >Interger<th align=right >Character<th align=right >Floating-point<th align=right >String<th align=right >Boolean<th align=right >Pointer<tr><td align=right >int<td align=right >char<td align=right >float<td align=right ><td align=right >true<td align=right >std::nullpter_t nullptr<tr><td align=right >signed/unsigned<td align=right >signed char<td align=right >double<td align=right ><td align=right >false<td align=right ><tr><td align=right >short&#40;16&#41;/long&#40;32&#41;/long long&#40;64&#41;<td align=right >unsigned char<td align=right >long double<td align=right ><td align=right ><td align=right ></table> <h2 id=declarations_and_definitions ><a href="#declarations_and_definitions" class=header-anchor >Declarations and Definitions</a></h2> <pre><code class="cpp hljs"><span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;string&gt;</span></span>
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >f</span><span class=hljs-params >(<span class=hljs-type >int</span> i)</span></span>; <span class=hljs-comment >// forward declaration</span>
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >main</span><span class=hljs-params >()</span>
+</span>{
+    <span class=hljs-type >const</span> <span class=hljs-type >double</span> pi = <span class=hljs-number >3.14</span>; <span class=hljs-comment >//OK</span>
+    <span class=hljs-type >int</span> i = <span class=hljs-built_in >f</span>(<span class=hljs-number >2</span>); <span class=hljs-comment >//OK. f is forward-declared</span>
+    C obj; <span class=hljs-comment >// error! C not yet declared.</span>
+    std::string str; <span class=hljs-comment >// OK std::string is declared in &lt;string&gt; header</span>
+    j = <span class=hljs-number >0</span>; <span class=hljs-comment >// error! No type specified.</span>
+    <span class=hljs-keyword >auto</span> k = <span class=hljs-number >0</span>; <span class=hljs-comment >// OK. type inferred as int by compiler.</span>
+}
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >f</span><span class=hljs-params >(<span class=hljs-type >int</span> i)</span>
+</span>{
+    <span class=hljs-keyword >return</span> i + <span class=hljs-number >42</span>;
+}
+
+<span class=hljs-keyword >namespace</span> N {
+   <span class=hljs-keyword >class</span> <span class="hljs-title class_">C</span>{<span class=hljs-comment >/*...*/</span>};
+}</code></pre> <p>Static class members</p> <h2 id=typedefs_and_using_statements ><a href="#typedefs_and_using_statements" class=header-anchor >Typedefs and using statements</a></h2> <pre><code class="cpp hljs"><span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;vector&gt;</span></span>
+
+<span class=hljs-comment >/*
+ * typedef
+ */</span> 
+<span class=hljs-comment >// template &lt;typename T&gt;</span>
+<span class=hljs-comment >// typedef std::vector&lt;T&gt; VECTOR</span>
+
+<span class=hljs-comment >/*
+ * using
+ */</span> 
+<span class=hljs-keyword >template</span> &lt;<span class=hljs-keyword >typename</span> T&gt;
+<span class=hljs-keyword >using</span> VECTOR = std::vector&lt;T&gt;</code></pre> <h2 id=storage_classes ><a href="#storage_classes" class=header-anchor >Storage classes</a></h2> <p><code>static</code> keyword can be used to declare <code>variables</code>, <code>functions</code> at global scope, namespace scope and class scope; <code>variables</code> at local scope.</p> <ol> <li><p>When you declare a variable or function at file scope &#40;global and/or namespace scope&#41;, the static keyword specifies that the variable or function has internal linkage. When you declare a variable, the variable has static duration and the compiler initializes it to 0 unless you specify another value.</p> <li><p>When you declare a variable in a function, the static keyword specifies that the variable retains its state between calls to that function.</p> <li><p>When you declare a data member in a class declaration, the static keyword specifies that one copy of the member is <code>shared by all instances of the class</code>. A static data member must be defined at file scope. An integral data member that you declare as const static can have an initializer.</p> <li><p>When you declare a member function in a class declaration, the static keyword specifies that the function is shared by all instances of the class. A static member function can&#39;t access an instance member because the function doesn&#39;t have an implicit this pointer. To access an instance member, declare the function with a parameter that&#39;s an instance pointer or reference.</p> <li><p>You can&#39;t declare the members of a union as static. However, a globally declared anonymous union must be explicitly declared static.</p> </ol> <h3 id=static_variable_in_a_function_2 ><a href="#static_variable_in_a_function_2" class=header-anchor >static variable in a function &#40;2.&#41;</a></h3> <pre><code class="cpp hljs"><span class=hljs-comment >// static1.cpp</span>
+<span class=hljs-comment >// compile with: /EHsc</span>
+<span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;iostream&gt;</span></span>
+
+<span class=hljs-keyword >using</span> <span class=hljs-keyword >namespace</span> std;
+<span class=hljs-function ><span class=hljs-type >void</span> <span class=hljs-title >showstat</span><span class=hljs-params >( <span class=hljs-type >int</span> curr )</span> </span>{
+   <span class=hljs-type >static</span> <span class=hljs-type >int</span> nStatic;    <span class=hljs-comment >// Value of nStatic is retained</span>
+                          <span class=hljs-comment >// between each function call</span>
+   nStatic += curr;
+   cout &lt;&lt; <span class=hljs-string >&quot;nStatic is &quot;</span> &lt;&lt; nStatic &lt;&lt; endl;
+}
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >main</span><span class=hljs-params >()</span> </span>{
+   <span class=hljs-keyword >for</span> ( <span class=hljs-type >int</span> i = <span class=hljs-number >0</span>; i &lt; <span class=hljs-number >5</span>; i++ )
+      <span class=hljs-built_in >showstat</span>( i );
+}</code></pre> <h3 id=static_in_a_class_3 ><a href="#static_in_a_class_3" class=header-anchor >static in a class &#40;3.&#41;</a></h3> <pre><code class="cpp hljs"><span class=hljs-comment >// static2.cpp</span>
+<span class=hljs-comment >// compile with: /EHsc</span>
+<span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;iostream&gt;</span></span>
+
+<span class=hljs-keyword >using</span> <span class=hljs-keyword >namespace</span> std;
+<span class=hljs-keyword >class</span> <span class="hljs-title class_">CMyClass</span> {
+<span class=hljs-keyword >public</span>:
+   <span class=hljs-type >static</span> <span class=hljs-type >int</span> m_i;
+};
+
+<span class=hljs-type >int</span> CMyClass::m_i = <span class=hljs-number >0</span>;
+CMyClass myObject1;
+CMyClass myObject2;
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >main</span><span class=hljs-params >()</span> </span>{
+   cout &lt;&lt; myObject1.m_i &lt;&lt; endl; <span class=hljs-comment >// 0</span>
+   cout &lt;&lt; myObject2.m_i &lt;&lt; endl; <span class=hljs-comment >// 0</span>
+
+   myObject1.m_i = <span class=hljs-number >1</span>;
+   cout &lt;&lt; myObject1.m_i &lt;&lt; endl; <span class=hljs-comment >// 1</span>
+   cout &lt;&lt; myObject2.m_i &lt;&lt; endl; <span class=hljs-comment >// 1</span>
+
+   myObject2.m_i = <span class=hljs-number >2</span>;
+   cout &lt;&lt; myObject1.m_i &lt;&lt; endl; <span class=hljs-comment >// 2</span>
+   cout &lt;&lt; myObject2.m_i &lt;&lt; endl; <span class=hljs-comment >// 2</span>
+
+   CMyClass::m_i = <span class=hljs-number >3</span>;
+   cout &lt;&lt; myObject1.m_i &lt;&lt; endl; <span class=hljs-comment >// 3</span>
+   cout &lt;&lt; myObject2.m_i &lt;&lt; endl; <span class=hljs-comment >// 3</span>
+}</code></pre> <pre><code class="cpp hljs"><span class=hljs-comment >// static3.cpp</span>
+<span class=hljs-comment >// compile with: /EHsc</span>
+<span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;iostream&gt;</span></span>
+<span class=hljs-keyword >using</span> <span class=hljs-keyword >namespace</span> std;
+<span class=hljs-keyword >struct</span> <span class="hljs-title class_">C</span> {
+   <span class=hljs-function ><span class=hljs-type >void</span> <span class=hljs-title >Test</span><span class=hljs-params >(<span class=hljs-type >int</span> value)</span> </span>{
+      <span class=hljs-type >static</span> <span class=hljs-type >int</span> var = <span class=hljs-number >0</span>;
+      <span class=hljs-keyword >if</span> (var == value)
+         cout &lt;&lt; <span class=hljs-string >&quot;var == value&quot;</span> &lt;&lt; endl;
+      <span class=hljs-keyword >else</span>
+         cout &lt;&lt; <span class=hljs-string >&quot;var != value&quot;</span> &lt;&lt; endl;
+
+      var = value;
+   }
+};
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >main</span><span class=hljs-params >()</span> </span>{
+   C c1;
+   C c2;
+   c1.<span class=hljs-built_in >Test</span>(<span class=hljs-number >100</span>);
+   c2.<span class=hljs-built_in >Test</span>(<span class=hljs-number >100</span>);
+}
+
+<span class=hljs-comment >/* Output
+var != value
+var == value
+*/</span></code></pre> <p>In short, the <code>static</code> variable can be tranferred and retained through the process</p> <h2 id=const_member_functions ><a href="#const_member_functions" class=header-anchor ><code>const</code> member functions</a></h2> <p>Declaring a member function with the const keyword specifies that the function is a &quot;read-only&quot; function that doesn&#39;t modify the object for which it&#39;s called. A constant member function can&#39;t modify any non-static data members or call any member functions that aren&#39;t constant. To declare a constant member function, place the const keyword after the closing parenthesis of the argument list. The const keyword is required in both the declaration and the definition.</p> <pre><code class="cpp hljs"><span class=hljs-comment >// constant_member_function.cpp</span>
+<span class=hljs-keyword >class</span> <span class="hljs-title class_">Date</span>
+{
+<span class=hljs-keyword >public</span>:
+   <span class=hljs-built_in >Date</span>( <span class=hljs-type >int</span> mn, <span class=hljs-type >int</span> dy, <span class=hljs-type >int</span> yr );
+   <span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >getMonth</span><span class=hljs-params >()</span> <span class=hljs-type >const</span></span>;     <span class=hljs-comment >// A read-only function</span>
+   <span class=hljs-function ><span class=hljs-type >void</span> <span class=hljs-title >setMonth</span><span class=hljs-params >( <span class=hljs-type >int</span> mn )</span></span>;   <span class=hljs-comment >// A write function; can&#x27;t be const</span>
+<span class=hljs-keyword >private</span>:
+   <span class=hljs-type >int</span> month;
+};
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >Date::getMonth</span><span class=hljs-params >()</span> <span class=hljs-type >const</span>
+</span>{
+   <span class=hljs-keyword >return</span> month;        <span class=hljs-comment >// Doesn&#x27;t modify anything</span>
+}
+<span class=hljs-function ><span class=hljs-type >void</span> <span class=hljs-title >Date::setMonth</span><span class=hljs-params >( <span class=hljs-type >int</span> mn )</span>
+</span>{
+   month = mn;          <span class=hljs-comment >// Modifies data member</span>
+}
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >main</span><span class=hljs-params >()</span>
+</span>{
+   <span class=hljs-function >Date <span class=hljs-title >MyDate</span><span class=hljs-params >( <span class=hljs-number >7</span>, <span class=hljs-number >4</span>, <span class=hljs-number >1998</span> )</span></span>;
+   <span class=hljs-function ><span class=hljs-type >const</span> Date <span class=hljs-title >BirthDate</span><span class=hljs-params >( <span class=hljs-number >1</span>, <span class=hljs-number >18</span>, <span class=hljs-number >1953</span> )</span></span>;
+   MyDate.<span class=hljs-built_in >setMonth</span>( <span class=hljs-number >4</span> );    <span class=hljs-comment >// Okay</span>
+   BirthDate.<span class=hljs-built_in >getMonth</span>();    <span class=hljs-comment >// Okay</span>
+   BirthDate.<span class=hljs-built_in >setMonth</span>( <span class=hljs-number >4</span> ); <span class=hljs-comment >// C2662 Error</span>
+}</code></pre> <h2 id=constexpr ><a href="#constexpr" class=header-anchor ><code>constexpr</code></a></h2> <p>The primary difference between <code>const</code> and <code>constexpr</code> variables is that the initialization of a <code>const</code> variable can be deferred until run time. A <code>constexpr</code> variable must be initialized at compile time. All <code>constexpr</code> variables are <code>const</code>.</p> <pre><code class="cpp hljs"><span class=hljs-keyword >constexpr</span> <span class=hljs-type >float</span> x = <span class=hljs-number >42.0</span>;
+<span class=hljs-keyword >constexpr</span> <span class=hljs-type >float</span> y{<span class=hljs-number >108</span>};
+<span class=hljs-keyword >constexpr</span> <span class=hljs-type >float</span> z = <span class=hljs-built_in >exp</span>(<span class=hljs-number >5</span>, <span class=hljs-number >3</span>);
+<span class=hljs-keyword >constexpr</span> <span class=hljs-type >int</span> i; <span class=hljs-comment >// Error! Not initialized</span>
+<span class=hljs-type >int</span> j = <span class=hljs-number >0</span>;
+<span class=hljs-keyword >constexpr</span> <span class=hljs-type >int</span> k = j + <span class=hljs-number >1</span>; <span class=hljs-comment >//Error! j not a constant expression</span>
+
+<span class=hljs-function ><span class=hljs-keyword >constexpr</span> <span class=hljs-type >float</span> <span class=hljs-title >exp</span><span class=hljs-params >(<span class=hljs-type >float</span> x, <span class=hljs-type >int</span> n)</span>
+</span>{
+    <span class=hljs-keyword >return</span> n == <span class=hljs-number >0</span> ? <span class=hljs-number >1</span> :
+        n % <span class=hljs-number >2</span> == <span class=hljs-number >0</span> ? <span class=hljs-built_in >exp</span>(x * x, n / <span class=hljs-number >2</span>) :
+        <span class=hljs-built_in >exp</span>(x * x, (n - <span class=hljs-number >1</span>) / <span class=hljs-number >2</span>) * x;
+}</code></pre> <h2 id=alias_and_typedef ><a href="#alias_and_typedef" class=header-anchor >Alias and typedef</a></h2> <pre><code class="cpp hljs"><span class=hljs-keyword >typedef</span> type identifier
+<span class=hljs-keyword >using</span> identifier = type;</code></pre> <pre><code class="cpp hljs"><span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;stdlib.h&gt;</span></span>
+<span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;new&gt;</span></span>
+
+<span class=hljs-keyword >template</span> &lt;<span class=hljs-keyword >typename</span> T&gt; <span class=hljs-keyword >struct</span> <span class="hljs-title class_">MyAlloc</span> {
+    <span class=hljs-keyword >typedef</span> T value_type;
+
+    <span class=hljs-built_in >MyAlloc</span>() { }
+    <span class=hljs-keyword >template</span> &lt;<span class=hljs-keyword >typename</span> U&gt; <span class=hljs-built_in >MyAlloc</span>(<span class=hljs-type >const</span> MyAlloc&lt;U&gt;&amp;) { }
+
+    <span class=hljs-type >bool</span> <span class=hljs-keyword >operator</span>==(<span class=hljs-type >const</span> MyAlloc&amp;) <span class=hljs-type >const</span> { <span class=hljs-keyword >return</span> <span class=hljs-literal >true</span>; }
+    <span class=hljs-type >bool</span> <span class=hljs-keyword >operator</span>!=(<span class=hljs-type >const</span> MyAlloc&amp;) <span class=hljs-type >const</span> { <span class=hljs-keyword >return</span> <span class=hljs-literal >false</span>; }
+
+    <span class=hljs-function >T * <span class=hljs-title >allocate</span><span class=hljs-params >(<span class=hljs-type >const</span> <span class=hljs-type >size_t</span> n)</span> <span class=hljs-type >const</span> </span>{
+        <span class=hljs-keyword >if</span> (n == <span class=hljs-number >0</span>) {
+            <span class=hljs-keyword >return</span> <span class=hljs-literal >nullptr</span>;
+        }
+
+        <span class=hljs-keyword >if</span> (n &gt; <span class=hljs-built_in >static_cast</span>&lt;<span class=hljs-type >size_t</span>&gt;(<span class=hljs-number >-1</span>) / <span class=hljs-built_in >sizeof</span>(T)) {
+            <span class=hljs-keyword >throw</span> std::<span class=hljs-built_in >bad_array_new_length</span>();
+        }
+
+        <span class=hljs-type >void</span> * <span class=hljs-type >const</span> pv = <span class=hljs-built_in >malloc</span>(n * <span class=hljs-built_in >sizeof</span>(T));
+
+        <span class=hljs-keyword >if</span> (!pv) {
+            <span class=hljs-keyword >throw</span> std::<span class=hljs-built_in >bad_alloc</span>();
+        }
+
+        <span class=hljs-keyword >return</span> <span class=hljs-built_in >static_cast</span>&lt;T *&gt;(pv);
+    }
+
+    <span class=hljs-function ><span class=hljs-type >void</span> <span class=hljs-title >deallocate</span><span class=hljs-params >(T * <span class=hljs-type >const</span> p, <span class=hljs-type >size_t</span>)</span> <span class=hljs-type >const</span> </span>{
+        <span class=hljs-built_in >free</span>(p);
+    }
+};
+
+<span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;vector&gt;</span></span>
+<span class=hljs-keyword >using</span> MyIntVector = std::vector&lt;<span class=hljs-type >int</span>, MyAlloc&lt;<span class=hljs-type >int</span>&gt;&gt;;
+
+<span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;iostream&gt;</span></span>
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >main</span> <span class=hljs-params >()</span>
+</span>{
+    MyIntVector foov = { <span class=hljs-number >1701</span>, <span class=hljs-number >1764</span>, <span class=hljs-number >1664</span> };
+
+    <span class=hljs-keyword >for</span> (<span class=hljs-keyword >auto</span> a: foov) std::cout &lt;&lt; a &lt;&lt; <span class=hljs-string >&quot; &quot;</span>;
+    std::cout &lt;&lt; <span class=hljs-string >&quot;\n&quot;</span>;
+
+    <span class=hljs-keyword >return</span> <span class=hljs-number >0</span>;
+}</code></pre> <p><code>typedef</code> is often combined with struct to declare and name user-defined types:</p> <pre><code class="cpp hljs"><span class=hljs-comment >// typedef_specifier2.cpp</span>
+<span class=hljs-meta >#<span class=hljs-keyword >include</span> <span class=hljs-string >&lt;stdio.h&gt;</span></span>
+
+<span class=hljs-keyword >typedef</span> <span class=hljs-keyword >struct</span> <span class="hljs-title class_">mystructtag</span>
+{
+    <span class=hljs-type >int</span>   i;
+    <span class=hljs-type >double</span> f;
+} mystruct;
+
+<span class=hljs-function ><span class=hljs-type >int</span> <span class=hljs-title >main</span><span class=hljs-params >()</span>
+</span>{
+    mystruct ms;
+    ms.i = <span class=hljs-number >10</span>;
+    ms.f = <span class=hljs-number >0.99</span>;
+    <span class=hljs-built_in >printf_s</span>(<span class=hljs-string >&quot;%d   %f\n&quot;</span>, ms.i, ms.f);
+}
+
+<span class=hljs-comment >/* Output
+10   0.990000
+*/</span></code></pre> <h2 id=decltype ><a href="#decltype" class=header-anchor ><code>decltype</code></a></h2> <p>The decltype type specifier yields the type of a specified expression. The decltype type specifier, together with the auto keyword, is useful primarily to developers who write template libraries. Use auto and decltype to declare a template function whose return type depends on the types of its template arguments. Or, use auto and decltype to declare a template function that wraps a call to another function, and then returns the return type of the wrapped function.</p> <div class=page-foot > <div class=copyright > <a id=github  href="https://github.com/7lang2yan">&copy; Langyan Zang</a>. Last modified: June 22, 2023. </div> </div> </div> </div> </div> </div> <!-- end of class page-wrap--> <script src="/Zurich_Log/libs/highlight/highlight.min.js"></script>
