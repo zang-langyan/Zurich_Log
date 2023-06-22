@@ -6,9 +6,10 @@
 
 ## Metropolis Algorithm
 
-Suppose a random variable $X$ follows a probability density (or mass) function $P$. Here, it is $\theta$ follows the posterior distribution function $p(\theta|D)$ - step 0: Initialize the random variable $\theta_{cur}$ (posterior case). (For the other cases, it could be any random variable, e.g. r.v. $X$)
+Suppose a random variable $X$ follows a probability density (or mass) function $P$. Here, it is $\theta$ follows the posterior distribution function $p(\theta|D)$ 
 
 \algo{Metropolis}{
+- step 0: Initialize the random variable $\theta_{cur}$ (posterior case). (For the other cases, it could be any random variable, e.g. r.v. $X$)
 - step 1: Generate a random proposed jump $\Delta \theta \sim N(\mu = 0, \sigma)$ (Note: 1. it could be other kind suitable distributions. 2. for the multivariate distributions, generate the jump from a multivariate distribution, e.g. $\Delta \bf{\theta} \sim N(\bf{\mu} = 0, \Sigma)$). $\theta_{pro} = \theta_{cur} + \Delta \theta$ 
 - step 2: Computing the moving probability for the random walk: $p_{move} = \min (1, \dfrac{P(\theta_{pro})}{P(\theta_{cur})})$. For the posterior distribution, since it is proportional to the product of prior and likelihood $p(\theta|D) \propto p(D|\theta)p(\theta)$, we have $p_{move} = \min (1, \dfrac{p(D|\theta_{pro})p(\theta_{pro})}{p(D|\theta_{cur})p(\theta_{cur})})$. (Note: if the proposed r.v. $theta$ is outside of its acceptable span, then we set $p_{move}$ to $0$) 
 - step 3: Check if the random walk jump is accepted: generate a random number from $U(0,1)$ uniform distribution. If it is less than $p_{move}$, then we accept the jump, otherwise, we stay. 
